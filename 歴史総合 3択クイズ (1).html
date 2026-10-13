@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>歴史総合 3択クイズ</title>
+<style>
+:root{--a:#2150e0;--b:#7a35d6;--k:rgba(255,255,255,.16);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--a:#0a1850;--b:#220d57}}
+:root[data-theme=dark]{--a:#0a1850;--b:#220d57}
+html{scroll-padding-top:env(safe-area-inset-top,0px);min-height:100%}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;background:linear-gradient(160deg,var(--a),var(--b)) fixed var(--a);color:#fff;font-family:"Hiragino Sans","Yu Gothic",sans-serif}
+#app{max-width:520px;margin:0 auto;padding:14px}
+h1{font-size:30px;text-align:center;margin:26px 0 6px;color:#ffd84a;text-shadow:0 3px 0 #b8860b,0 0 18px #ffd84a88}
+.sub{text-align:center;opacity:.85;margin:0 0 22px}
+.btn{display:block;width:100%;padding:16px;margin:12px 0;border:0;border-radius:14px;font:inherit;font-size:18px;font-weight:700;color:#fff;background:#e8a400;box-shadow:0 4px 0 #8a6000}
+.btn.s{background:#3a4a90;box-shadow:0 4px 0 #1b2560}
+.top{display:flex;justify-content:space-between;font-weight:700}
+.bar{height:12px;border-radius:9px;background:var(--k);overflow:hidden;margin:10px 0}
+.bar i{display:block;height:100%;width:100%;background:#4cd964}
+.q{background:var(--k);border:2px solid #ffd84a;border-radius:16px;padding:18px;font-size:19px;line-height:1.6;min-height:110px;display:flex;align-items:center;font-weight:700}
+.c{display:flex;align-items:center;gap:12px;width:100%;margin:12px 0;padding:14px;border:0;border-radius:14px;font:inherit;font-size:17px;font-weight:700;color:#fff;text-align:left;box-shadow:0 4px 0 rgba(0,0,0,.35)}
+.c b{flex:none;width:34px;height:34px;border-radius:50%;background:#fff;color:#222;display:grid;place-items:center}
+.c0{background:#e63946}.c1{background:#1d7be0}.c2{background:#2a9d4f}
+.c.ok{background:#14b85a;outline:4px solid #ffd84a}
+.c.ng{background:#555;text-decoration:line-through}
+.res{text-align:center;font-size:26px;font-weight:900;margin:8px 0}
+li{margin:8px 0;line-height:1.5}
+</style></head><body>
+<div id="app"></div>
+<script>
+const D=`19世紀後半、列強が植民地獲得を進めた動きは？|帝国主義|O
+国民を兵士として動員する制度は？|徴兵制|O
+1884〜85年、アフリカ分割のルールを定めた会議は？|ベルリン＝コンゴ会議|T
+ベルリン＝コンゴ会議を主催した人物は？|ビスマルク|P
+「最初に占領した国が獲得できる」という考えは？|先占権|O
+イギリスの帝国主義政策は？|3C政策|O
+3C政策の3都市は？|カイロ・ケープタウン・カルカッタ||カイロ・ケープタウン・カラチ,カサブランカ・ケープタウン・カルカッタ
+3C政策を進めたイギリスの人物は？|セシル＝ローズ|P
+植民地に商品作物を強制栽培させ、収入を本国のものとする方式は？|強制栽培制度|O
+独立を維持したタイで近代化を進めた人物は？|チュラロンコン（ラーマ5世）|P
+ロシアが清から租借した場所は？|旅順・大連||膠州湾,威海衛・九竜半島
+ドイツが租借した場所は？|膠州湾||旅順・大連,威海衛・九竜半島
+イギリスが租借した場所は？|威海衛・九竜半島||膠州湾,旅順・大連
+日清戦争後の講和条約は？|下関条約|T
+日清戦争敗北後、清で行われた近代化改革は？|戊戌の変法|E
+戊戌の変法を支持した清の皇帝は？|光緒帝|P
+戊戌の変法を弾圧した人物は？|西太后|P
+「扶清滅洋」を掲げた民衆運動は？|義和団運動|E
+「扶清滅洋」の意味は？|清を助け、外国勢力を排除すること||清を倒し、外国勢力と手を結ぶこと,清を近代化し、外国の制度を学ぶこと
+清が義和団を支持して列強に宣戦して起きた戦争は？|義和団戦争|E
+義和団戦争後、清と列強が結んだ取り決めは？|北京議定書|T
+義和団戦争後もロシアが軍隊を置き続けた地域は？|満州||山東半島,朝鮮半島
+ロシアの満州進出に対抗し、1902年に日本がイギリスと結んだ同盟は？|日英同盟|T
+日英同盟が結ばれたのは何年？|1902年|Y
+日露戦争が始まったのは何年？|1904年|Y
+閔妃一族の近代化を止めようと大院君派が起こしたクーデターは？|壬午軍乱|E
+金玉均らが近代化を目指して起こしたクーデターは？|甲申事変|E
+日清修好条規で清の全権を務めた人物は？|李鴻章|P
+征韓論を反対された留守政府が下野した事件は？|明治六年の政変|E
+日露戦争の原因となった日露の対立地域は？|満州・韓国||満州・台湾,シベリア・韓国
+日露戦争を終結させた条約は？|ポーツマス条約|T
+ポーツマス条約を仲介したアメリカ大統領は？|セオドア＝ローズヴェルト|P
+ポーツマス条約で日本が譲り受けた島は？|南樺太||北樺太,千島列島
+日本がロシアから引き継いだ鉄道の権益は？|南満州鉄道の権益|O
+日露戦争後、賠償金が得られず不満が爆発した事件は？|日比谷焼打ち事件|E
+1897年に成立した親露政権の国は？|大韓帝国||清,タイ
+日露戦争後、日本が韓国に置いた統治機関は？|韓国統監府|O
+初代韓国統監は？|伊藤博文|P
+日本が韓国を併合したのは何年？|1910年|Y
+韓国併合後、朝鮮に置かれた統治機関は？|朝鮮総督府|O
+ドイツ・オーストリア・イタリアの陣営は？|三国同盟||三国協商,三国干渉
+イギリス・フランス・ロシアの陣営は？|三国協商||三国同盟,三国干渉
+「ヨーロッパの火薬庫」と呼ばれた地域は？|バルカン半島||イベリア半島,スカンジナビア半島
+第一次世界大戦の直接のきっかけとなった事件は？|サライエヴォ事件|E
+サライエヴォ事件で暗殺された皇太子はどこの国の人？|オーストリア||セルビア,ドイツ
+第一次世界大戦が始まったのは何年？|1914年|Y
+日本が第一次世界大戦に参戦した根拠は？|日英同盟|T
+日本は第一次世界大戦にどちら側で参戦した？|連合国側||同盟国側,枢軸国側
+日本が攻撃した中国のドイツの拠点は？|山東省青島||威海衛,旅順
+1915年、日本が中国に突きつけた要求は？|二十一カ条の要求|T
+二十一カ条の要求のころの首相は？|大隈重信|P
+二十一カ条の要求のころの外務大臣は？|加藤高明|P
+総力戦で第一次世界大戦中に社会進出が進んだのは？|女性||学生,農民
+1917年、食料不足への反乱をきっかけに起きた革命は？|二月革命|E
+二月革命で退位した皇帝は？|ニコライ2世|P
+二月革命で崩壊した王朝は？|ロマノフ朝||ハプスブルク朝,ホーエンツォレルン朝
+二月革命後に成立した政府は？|臨時政府|O
+社会主義者の評議会は？|ソヴィエト|O
+レーニンが率いた勢力は？|ボリシェヴィキ||メンシェヴィキ,ナロードニキ
+革命当時のロシアの首都は？|ペトログラード||モスクワ,ウラジヴォストーク
+ボリシェヴィキが臨時政府を倒した革命は？|十月革命|E
+十月革命が起こったのは何年？|1917年|Y
+レーニンが世界革命を目指して設立した組織は？|コミンテルン|O
+列強がロシア革命に行った軍事介入は？|対ソ干渉戦争／シベリア出兵|E
+1920年、シベリアで日本人居留民や日本兵が殺害された事件は？|尼港事件|E
+尼港事件後、日本が占領した地域は？|北樺太||南樺太,千島列島
+第一次世界大戦後、アメリカは世界最大の何になった？|債権国||債務国,産油国
+1920年代のアメリカで進んだ生産・消費の形は？|大量生産・大量消費|O
+大量生産を可能にした代表的な生産方式は？|フォード方式|O
+1920年、アメリカで保障された政治的権利は？|女性参政権|O
+1924年、日本人移民を禁止した法律は？|移民法|T
+1920年代のアメリカで勢力を拡大した白人至上主義団体は？|クー＝クラックス＝クラン（KKK）|O
+1918年、ウィルソンが発表した戦後構想は？|十四カ条の平和原則|T
+各民族が自らの政治的なあり方を決めるという考え方は？|民族自決|O
+第一次世界大戦後に開かれた講和会議は？|パリ講和会議|T
+パリ講和会議が開かれたのは何年？|1919年|Y
+第一次世界大戦後、ドイツと結ばれた講和条約は？|ヴェルサイユ条約|T
+ヴェルサイユ条約でドイツに課された代表的なものは？|巨額の賠償金||軍備の増強,植民地の拡大
+ヴェルサイユ条約を中心とした欧州の国際秩序は？|ヴェルサイユ体制||ワシントン体制,ウィーン体制
+第一次世界大戦後につくられた国際平和機構は？|国際連盟||国際連合,コミンテルン
+国際連盟の本部が置かれた都市は？|ジュネーヴ||ニューヨーク,ハーグ
+国際連盟で重要事項を決める原則は？|全会一致||多数決,拒否権
+国際連盟が侵略国に行えた制裁は？|経済制裁||軍事制裁,賠償金の請求
+国際連盟が行えなかった制裁は？|軍事制裁||経済制裁,軍事同盟の締結
+国際連盟を提唱しながら加盟しなかった国は？|アメリカ||イギリス,フランス
+アジア・太平洋の国際秩序を話し合うために開かれた会議は？|ワシントン会議|T
+ワシントン会議を開催した国は？|アメリカ||イギリス,日本
+ワシントン会議で主力艦の保有量を制限した条約は？|ワシントン海軍軍縮条約|T
+日英同盟を解消することになった条約は？|四カ国条約|T
+中国の主権尊重などを定めた条約は？|九カ国条約|T
+ワシントン会議を中心に成立した国際秩序は？|ワシントン体制||ヴェルサイユ体制,ウィーン体制
+1919年、朝鮮で起こった独立運動は？|三・一独立運動|E
+三・一独立運動の背景となった考え方は？|民族自決|O
+1919年、中国で起こった反日・反帝国主義運動は？|五・四運動|E
+日本と清が1871年に結んだ対等条約は？|日清修好条規|T
+日清戦争で清が敗北 → 中国で何が進んだ？|列強による中国分割||清の領土拡大,列強の撤退
+満州・韓国をめぐる日露対立 → 何が起こった？|日露戦争|E
+日露戦争後 → 日本が支配を強めた国は？|韓国||清,タイ
+ソ連が1928年から導入した社会主義の経済体制は？|五か年計画||新経済政策／ネップ,ニューディール
+ソ連が対ソ干渉戦争を乗り切るために採用した経済体制は？|新経済政策／ネップ||五か年計画,ニューディール
+エジプトでフランス主導でつくられた運河は？|スエズ運河||パナマ運河,キール運河
+日本が1871年に条約改正の予備交渉のため派遣した使節は？|岩倉使節団|O
+1875年、日本とロシアが結んだ国境画定の条約は？|樺太・千島交換条約|T
+中国の主権尊重を定めた条約は？|九カ国条約|T
+主力艦の保有量を制限した条約は？|ワシントン海軍軍縮条約|T
+義和団戦争後、清と列強の間で結ばれたものは？|北京議定書|T
+義和団戦争 → ロシアはどこへの進出を強めた？|満州||山東半島,朝鮮半島`.trim().split("\n").map((l,n)=>{const[q,a,t,x]=l.split("|");return{n,q,a,t,x}});
+const $=s=>document.querySelector(s),app=$("#app"),P={};
+D.forEach(d=>{if(d.t)(P[d.t]=P[d.t]||[]).push(d.a)});
+const sh=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+let bad=new Set,Q=[],i=0,sc=0,st=0,wr=[],tm,tl,snd=1,ac;
+try{bad=new Set(JSON.parse(localStorage.getItem("rk")||"[]"))}catch(e){}
+const save=()=>{try{localStorage.setItem("rk",JSON.stringify([...bad]))}catch(e){}};
+function beep(ok){if(!snd)return;try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();(ok?[880,1320]:[200,150]).forEach((v,k)=>{const o=ac.createOscillator(),g=ac.createGain(),t=ac.currentTime+k*.15;o.type=ok?"sine":"sawtooth";o.frequency.value=v;g.gain.value=.15;o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+.25)})}catch(e){}}
+function home(){app.innerHTML=`<h1>歴史総合<br>3択クイズ</h1><p class="sub">～ネプリーグ風・中間考査対策～</p>
+<button class="btn" onclick="go(D)">全問チャレンジ（${D.length}問）</button>
+<button class="btn s" onclick="go(sh(D).slice(0,10))">10問チャレンジ</button>
+${bad.size?`<button class="btn s" onclick="go(D.filter(d=>bad.has(d.n)))">間違えた問題だけ（${bad.size}問）</button>`:""}
+<button class="btn s" onclick="snd=!snd;this.textContent=snd?'🔊 サウンド ON':'🔇 サウンド OFF'">${snd?"🔊 サウンド ON":"🔇 サウンド OFF"}</button>`}
+function mk(d){const x=d.x?d.x.split(","):sh([...new Set(P[d.t])].filter(v=>v!==d.a)).slice(0,2);return{...d,c:sh([d.a,...x])}}
+function go(L){Q=sh(L).map(mk);i=0;sc=0;st=0;wr=[];show()}
+function show(){if(i>=Q.length)return end();const q=Q[i];
+app.innerHTML=`<div class="top"><span>Q${i+1} / ${Q.length}</span><span>🔥${st}連続</span><span>⭕${sc}</span></div>
+<div class="q">${q.q}</div>
+${q.c.map((v,k)=>`<button class="c c${k}" onclick="ans(${k})"><b>${"ABC"[k]}</b>${v}</button>`).join("")}
+<div id="fb"></div>`;
+}
+function ans(k){clearInterval(tm);const q=Q[i],ok=q.c[k]===q.a;
+document.querySelectorAll(".c").forEach((b,j)=>{b.disabled=true;if(q.c[j]===q.a)b.classList.add("ok");else if(j===k)b.classList.add("ng")});
+if(ok){sc++;st++;bad.delete(q.n)}else{st=0;wr.push(q);bad.add(q.n)}
+save();beep(ok);
+$("#fb").innerHTML=`<div class="res">${ok?"⭕ 正解！":k<0?"⏰ 時間切れ…":"❌ 不正解…"}</div>`+(ok?"":`<p>正解：<b>${q.a}</b></p><button class="btn" onclick="nx()">次へ</button>`);
+if(ok)setTimeout(nx,1000)}
+function nx(){i++;show()}
+function end(){const n=Q.length,r=sc/n,t=r==1?"🏆 全問正解！歴史マスター！":r>=.8?"🎉 すばらしい！":r>=.6?"👍 あと一歩！":"💪 復習あるのみ！";
+app.innerHTML=`<h1>結果発表</h1><div class="res" style="font-size:42px">${sc} / ${n}</div><div class="res">${t}</div>
+${wr.length?`<button class="btn" onclick="go(wr)">間違えた${wr.length}問だけやり直す</button><h3>間違えた問題</h3><ul>${wr.map(q=>`<li>${q.q}<br>→ <b>${q.a}</b></li>`).join("")}</ul>`:""}
+<button class="btn s" onclick="home()">トップへ</button>`}
+home();
+</script></body></html>
